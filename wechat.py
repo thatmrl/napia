@@ -15,5 +15,14 @@ def text_reply(msg):
         print("player_1 <- player_2: " + msg.text)
 
 
+@itchat.msg_register(itchat.content.ATTACHMENT)
+def attachment_clap(msg):
+    team = itchat.search_chatrooms('博悦斋')[0]
+
+    if msg.fileName[-3:] == 'm4a':
+        itchat.send('👏', toUserName=team.userName)
+        print('-> ' + msg.fileName)
+
+
 itchat.auto_login()
 itchat.run()
