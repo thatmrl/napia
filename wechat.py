@@ -19,7 +19,7 @@ def text_reply(msg):
 def attachment_clap(msg):
     team = itchat.search_chatrooms('博悦斋')[0]
 
-    if msg.fileName[-3:] == 'm4a':
+    if msg.fromUserName == team.userName and msg.fileName[-3:] == 'm4a':
         itchat.send('👏', toUserName=team.userName)
         print('-> ' + msg.fileName)
 
