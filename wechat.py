@@ -7,11 +7,11 @@ def text_reply(msg):
     player_2 = itchat.search_friends('青春如火!')[0]
 
     if msg.fromUserName == player_1.userName:
-        itchat.send(msg.text, toUserName=player_2.userName)
+        itchat.send(msg.text.replace("李晨", "谈楚"), player_2.userName)
         print('player_1 -> player_2: ' + msg.text)
 
     if msg.fromUserName == player_2.userName:
-        itchat.send(msg.text, toUserName=player_1.userName)
+        itchat.send(msg.text.replace("谈楚", "李辰"), player_1.userName)
         print("player_1 <- player_2: " + msg.text)
 
 
